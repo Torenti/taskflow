@@ -1,0 +1,20 @@
+.board_container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.task_column {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) {
+    .board_container {
+        overflow-x: auto;
+    }
+
+    .task_column {
+        flex-shrink: 0;
+    }
+}
