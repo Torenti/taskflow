@@ -1,9 +1,10 @@
 import './App.css'
+import Header from './components/Header.jsx'
 
 function App() {
   return (
     <>
-      <h1>TaskFlow</h1>
+      <Header />
     </>
   )
 }
