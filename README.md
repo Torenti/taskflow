@@ -15,6 +15,7 @@ In development.
 * Set task priorities.
 * Save tasks using local storage.
 * Responsive user interface.
+* Tasks search system
 
 # Technologies
 * JavaScript 
@@ -26,7 +27,7 @@ In development.
 
 Clone the repository:
 ```bash
-git clone https://github.com/Torenti/taskfow.git
+git clone https://github.com/Torenti/taskflow.git
 ```
 
 Navigate to the project directory:
