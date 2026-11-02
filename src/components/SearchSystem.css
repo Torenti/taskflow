@@ -1,0 +1,93 @@
+.search_system_container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#search_form {
+    display: flex;
+    border: none;
+    gap: 12px;
+    width: 240px;
+    height: 36px;
+}
+
+@media (max-width:600px) {
+    .search_system_container {
+        flex-direction: column;
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    #search_form {
+        width: 100%;
+    }
+}
+
+#search_name {
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 6px;
+    padding-left: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#search_name:focus-visible {
+    outline: 3px solid gray;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width:600px) {
+    .filter {
+        flex-wrap: wrap;
+    }
+}
+
+.filter fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 0;
+    gap: 8px;
+}
+
+.filter fieldset legend {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.checkbox_container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.checkbox_container label {
+    font-size: 16px;
+}
+
+.checkbox_container input {
+    min-width: 16px;
+    min-height: 16px;
+}
+
+#sort_by {
+    height: 36px;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#sort_by:focus-visible {
+    outline: 3px solid gray;
+}
