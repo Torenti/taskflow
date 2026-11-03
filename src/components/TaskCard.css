@@ -1,0 +1,60 @@
+.task_card {
+    background-color: white;
+    position: relative;
+    width: 250px;
+    padding: 8px;
+    border: 3px solid black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+}
+
+.task_card:hover {
+    background-color: rgb(186, 186, 186);
+}
+
+.task_card:focus-visible {
+    outline: 3px solid gray;
+}
+
+.priority {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+    background-color: pink;
+    color: red;
+    font-size: 16px;
+    padding: 2px;
+    padding-right: 6px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.desc {
+    border: 1px solid gray;
+    font-size: 16px;
+    padding: 4px;
+    width: 100%;
+    min-height: 128px;
+    overflow-wrap: break-word;
+}
+
+.status {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.date {
+    font-size: 14px;
+    color: gray;
+}
