@@ -37,8 +37,17 @@
     outline: 3px solid gray;
 }
 
-@media (max-width:600px){
-    .task_add_container{
+.task_add_modal {
+    border: none;
+    background-color: transparent;
+}
+
+.task_add_modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width:600px) {
+    .task_add_container {
         max-width: 100%;
     }
 }

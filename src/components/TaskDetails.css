@@ -88,6 +88,15 @@
     outline: 3px solid gray;
 }
 
+.task_details_modal {
+    border: none;
+    background-color: transparent;
+}
+
+.task_details_modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
 @media (max-width:600px) {
     .task_details_container {
         max-width: 100%;
