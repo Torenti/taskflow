@@ -1,0 +1,95 @@
+.task_details_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 8px;
+    border: 3px solid black;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+.task_details_container input,
+.task_details_container textarea,
+.task_details_container select {
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+#save_button {
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    min-width: 128px;
+}
+
+#save_button:hover {
+    background-color: gray;
+}
+
+#save_button:focus-visible {
+    outline: 3px solid gray;
+}
+
+#del_button {
+    background-color: red;
+    color: white;
+    border: 3px solid red;
+    border-radius: 8px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    min-width: 128px;
+}
+
+#del_button:hover {
+    background-color: rgb(255, 75, 75);
+}
+
+#del_button:focus-visible {
+    outline: 3px solid gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#exit {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: black;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#exit:hover {
+    background-color: gray;
+}
+
+#exit:focus-visible {
+    outline: 3px solid gray;
+}
+
+@media (max-width:600px) {
+    .task_details_container {
+        max-width: 100%;
+    }
+}

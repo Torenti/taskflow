@@ -7,7 +7,7 @@ function TaskCard() {
             <h3 className="title">Task title</h3>
             <p className="desc">Task description</p>
             <p className="status">In Progress</p>
-            <time className="date">01.02.2026</time>
+            <time className="date" dateTime="2026-02-01">01.02.2026</time>
         </button>
     )
 }
