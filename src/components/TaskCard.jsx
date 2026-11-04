@@ -1,5 +1,11 @@
 import "./TaskCard.css"
 
+const status = {
+    to_do: "To do",
+    done: "Done",
+    in_progress: "In Progress"
+}
+
 function TaskCard(props) {
     const task = props.task;
 
@@ -8,7 +14,7 @@ function TaskCard(props) {
             <span className="priority">{task.priority}</span>
             <span className="title">{task.title}</span>
             <span className="desc">{task.desc}</span>
-            <span className="status">{task.status}</span>
+            <span className="status">{status[task.status]}</span>
             <time className="date" dateTime={new Date(task.date).toISOString()}>{new Date(task.date).toLocaleDateString("ru-RU")}</time>
         </button>
     )
