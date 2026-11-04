@@ -26,7 +26,7 @@
 .priority {
     position: absolute;
     right: 0px;
-    top: 2px;
+    top: 4px;
     background-color: pink;
     color: red;
     font-size: 16px;
@@ -38,6 +38,7 @@
     font-size: 18px;
     font-weight: bold;
     margin: 0;
+    margin-top: 16px;
 }
 
 .desc {

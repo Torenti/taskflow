@@ -4,7 +4,7 @@ import Board from './components/Board.jsx'
 import SearchSystem from './components/SearchSystem.jsx'
 import TaskAdd from './components/TaskAdd.jsx'
 import TaskDetails from './components/TaskDetails.jsx'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -38,11 +38,22 @@ function App() {
     }
   );
 
+  const dialogRef = useRef(null);
+
+  function openTaskAdd() {
+    dialogRef.current.showModal();
+  }
+
+  function addTask(newTask) {
+    setTasks(prevTasks => [...prevTasks, newTask]);
+    dialogRef.current.close();
+  }
+
   return (
     <>
-      <Header />
+      <Header openTaskAdd={openTaskAdd} />
       <SearchSystem />
-      <TaskAdd />
+      <TaskAdd taskAdd={addTask} dialogRef={dialogRef} />
       <Board tasks={tasks} />
       <TaskDetails />
     </>
