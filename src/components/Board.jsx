@@ -12,19 +12,19 @@ function Board(props) {
             <div className="task_column" id="to_do_column">
                 <h2>To do</h2>
                 {toDoTasks.map(task => (
-                    <TaskCard key={task.id} task={task} />
+                    <TaskCard key={task.id} task={task} setChosenTask={props.setChosenTask} />
                 ))}
             </div>
             <div className="task_column" id="in_progress_column">
                 <h2>In Progress</h2>
                 {inProgressTasks.map(task => (
-                    <TaskCard key={task.id} task={task} />
+                    <TaskCard key={task.id} task={task} setChosenTask={props.setChosenTask} />
                 ))}
             </div>
             <div className="task_column" id="done_column">
                 <h2>Done</h2>
                 {doneTasks.map(task => (
-                    <TaskCard key={task.id} task={task} />
+                    <TaskCard key={task.id} task={task} setChosenTask={props.setChosenTask} />
                 ))}
             </div>
         </div>

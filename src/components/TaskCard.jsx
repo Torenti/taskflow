@@ -10,7 +10,7 @@ function TaskCard(props) {
     const task = props.task;
 
     return (
-        <button className="task_card" type="button">
+        <button className="task_card" type="button" onClick={() => props.setChosenTask(props.task)}>
             <span className="priority">{task.priority}</span>
             <span className="title">{task.title}</span>
             <span className="desc">{task.desc}</span>
