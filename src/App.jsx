@@ -39,6 +39,28 @@ function App() {
   );
   const [chosenTask, setChosenTask] = useState(null);
 
+  const [titleToFind, setTitleToFind] = useState("");
+
+  const [statusCheck, setStatusCheck] = useState([]);
+
+  const [priorityCheck, setPriorityCheck] = useState([]);
+
+  const [sortRule, setSortRule] = useState("newest");
+
+  function compare(checkItem, item) {
+    if (checkItem.length === 0) { return true; }
+    return checkItem.includes(item);
+  }
+
+  const filteredTasks = tasks.filter(task => compare(priorityCheck, task.priority) && compare(statusCheck, task.status) && task.title.toLowerCase().includes(titleToFind.toLowerCase()));
+  const sortedTasks = [...filteredTasks];
+  if (sortRule === "oldest") {
+    sortedTasks.sort((a, b) => a.date - b.date);
+  } else {
+    sortedTasks.sort((a, b) => b.date - a.date);
+  }
+
+
   const dialogRef = useRef(null);
 
   const detailsRef = useRef(null);
@@ -77,10 +99,20 @@ function App() {
   return (
     <>
       <Header openTaskAdd={openTaskAdd} />
-      <SearchSystem />
+      <SearchSystem
+        titleToFind={titleToFind}
+        setTitleToFind={setTitleToFind}
+        statusCheck={statusCheck}
+        setStatusCheck={setStatusCheck}
+        priorityCheck={priorityCheck}
+        setPriorityCheck={setPriorityCheck}
+        sortRule={sortRule}
+        setSortRule={setSortRule}
+      />
       <TaskAdd taskAdd={addTask} dialogRef={dialogRef} />
-      <Board tasks={tasks} setChosenTask={setChosenTask} />
+      <Board tasks={sortedTasks} setChosenTask={setChosenTask} />
       <TaskDetails
+        key={chosenTask?.id}
         detailsRef={detailsRef}
         chosenTask={chosenTask}
         closeTaskDetails={closeTaskDetails}

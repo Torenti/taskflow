@@ -1,22 +1,17 @@
 import "./TaskDetails.css"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 function TaskDetails(props) {
 
-    const [currentTask, setCurrentTask] = useState(null);
-
-    useEffect(() => {
-        if (props.chosenTask) {
-            setCurrentTask(
-                {
-                    title: props.chosenTask.title,
-                    desc: props.chosenTask.desc,
-                    priority: props.chosenTask.priority,
-                    status: props.chosenTask.status
-                }
-            )
+    const [currentTask, setCurrentTask] = useState(props.chosenTask
+        ? {
+            title: props.chosenTask.title,
+            desc: props.chosenTask.desc,
+            priority: props.chosenTask.priority,
+            status: props.chosenTask.status
         }
-    }, [props.chosenTask]);
+        : null
+    );
 
     function handleSave(event) {
         event.preventDefault();
