@@ -1,21 +1,23 @@
 # TaskFlow
 
-TaskFlow is a simple task management application designed to help users organize their daily activities, manage tasks, and track their progress.
+TaskFlow is a simple task management application built with React. It helps users organize their daily activities, manage tasks, and track their progress.
 
-The project is being developed as a portfolio project to practice modern frontend development with React and JavaScript.
+The project was developed as a frontend portfolio project to practice modern frontend development with React and JavaScript.
 
 # Project status
 
-In development.
+Core functionality implemented.
 
-# Planned Features
+# Features
 
-* Create, edit, and delete tasks.
-* Organize tasks by status.
-* Set task priorities.
-* Save tasks using local storage.
-* Responsive user interface.
-* Tasks search system
+* Task Management - create, edit, and delete tasks.
+* Task Statuses - organize tasks into three columns: To Do, In Progress and Done.
+* Priority Management - assign Low, Medium or High priority to tasks.
+* Search - find tasks by title.
+* Filtering - filter tasks by status and priority.
+* Sorting - sort tasks by creation date.
+* Local Storage - automatically save tasks and restore them after page reloads.
+* Responsive Layout - interface adapts to different screen sizes.
 
 # Technologies
 * JavaScript 
@@ -51,3 +53,43 @@ npm run dev
 | `npm run dev` | Starts the development server |
 | `npm run build` | Builds the application for production |
 | `npm run lint` | Runs ESLint to check the code |
+
+# Project Structure
+```bash
+taskflow/
+---public/
+------favicon.svg
+---src/
+------components/
+---------Header.jsx
+---------Header.css
+---------Board.jsx
+---------Board.css
+---------SearchSystem.jsx
+---------SearchSystem.css
+---------TaskAdd.jsx
+---------TaskAdd.css
+---------TaskCard.jsx
+---------TaskCard.css
+---------TaskDetails.jsx
+---------TaskDetails.css
+------App.jsx
+------App.css
+------main.jsx
+------index.css
+---index.html
+---package-lock.json
+---package.json
+---README.md
+```
+
+# Data Persistence
+TaskFlow uses the browser's Local Storage API to persist tasks between sessions.
+
+Tasks are serialized into JSON before being stored and restored when the application starts.
+
+# Future Improvements
+* Integration with a REST API.
+* Asynchronous data fetching and error handling.
+* Unit and integration tests.
+* Further UI and accessibility improvements.
