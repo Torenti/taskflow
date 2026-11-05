@@ -9,34 +9,45 @@ import { useState, useRef, useEffect } from 'react'
 function App() {
   const [tasks, setTasks] = useState(
     () => {
-      return ([
-        {
-          id: crypto.randomUUID(),
-          title: "Изучить React",
-          desc: "Разобраться с useState",
-          priority: "high",
-          status: "to_do",
-          date: Date.now()
-        },
-        {
-          id: crypto.randomUUID(),
-          title: "Изучить Rest API",
-          desc: "Доделать проект",
-          priority: "medium",
-          status: "in_progress",
-          date: Date.now()
-        },
-        {
-          id: crypto.randomUUID(),
-          title: "Сделать портфолио",
-          desc: "Подготовить для отправки резюме",
-          priority: "low",
-          status: "to_do",
-          date: Date.now()
-        }
-      ])
+      const taskFlowTasks = localStorage.getItem("taskflow_tasks");
+      if (taskFlowTasks) {
+        return (JSON.parse(taskFlowTasks));
+      }
+      else {
+        return ([
+          {
+            id: crypto.randomUUID(),
+            title: "Изучить React",
+            desc: "Разобраться с useState",
+            priority: "high",
+            status: "to_do",
+            date: Date.now()
+          },
+          {
+            id: crypto.randomUUID(),
+            title: "Изучить Rest API",
+            desc: "Доделать проект",
+            priority: "medium",
+            status: "in_progress",
+            date: Date.now()
+          },
+          {
+            id: crypto.randomUUID(),
+            title: "Сделать портфолио",
+            desc: "Подготовить для отправки резюме",
+            priority: "low",
+            status: "to_do",
+            date: Date.now()
+          }
+        ])
+      }
     }
   );
+
+  useEffect(() => {
+    localStorage.setItem("taskflow_tasks", JSON.stringify(tasks))
+  }, [tasks]);
+
   const [chosenTask, setChosenTask] = useState(null);
 
   const [titleToFind, setTitleToFind] = useState("");
